@@ -4,91 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Animal Detection Major Project</title>
+
+  <!-- Main Style -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='aos/aos.css') }}">
-  <script src="{{ url_for('static', filename='aos/aos.js') }}"></script>
+  
+  <!-- Scroll Animation CSS -->  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1 data-aos="fade-down">A COMPARATIVE STUDY OF VGG19, DENSE NET, AND
-      INCEPTION V3 FOR WILDLIFE AND HUMAN
-      THREAT DETECTION</h1>
-    <p data-aos="fade-up">Model's Performance Comparison on Animal Detection Data</p>
+  <header class="scroll-animate">
+    <h1>A COMPARATIVE STUDY OF VGG19, DENSE NET, AND INCEPTION V3 FOR WILDLIFE AND HUMAN THREAT DETECTION</h1>
+    <p>Model's Performance Comparison on Animal Detection Data</p>
   </header>
 
   <main>
 
     <!-- 📖 Model Basics -->
-    <section class="basics" data-aos="fade-up">
+    <section class="basics scroll-animate">
       <h2>Selected Models:</h2>
       <div class="model-cards">
-        <div class="card">
+        <div class="card scroll-animate">
           <h3>InceptionV3</h3>
           <p>A deep CNN architecture from Google that uses factorized convolutions and inception modules for improved accuracy and reduced computational cost.</p>
         </div>
-        <div class="card">
+        <div class="card scroll-animate">
           <h3>DenseNet</h3>
           <p>Each layer is connected to every other layer (dense connectivity), promoting feature reuse, better gradients, and fewer parameters.</p>
         </div>
-        <div class="card">
+        <div class="card scroll-animate">
           <h3>VGG19</h3>
           <p>A deep but simple network using stacked 3x3 convolutions. Though heavier, it remains a strong baseline in many vision tasks.</p>
         </div>
       </div>
     </section>
 
-<!-- 📊 Parameters Table -->
-<section class="comparison" data-aos="fade-up">
-  <h2>Model Parameters & Accuracy</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Model</th>
-        <th>Total Parameters</th>
-        <th>Trainable Parameters</th>
-        <th>Non-Trainable Parameters</th>
-        <th>Accuracy (%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>InceptionV3</td>
-        <td>156,036,911</td>
-        <td>134,234,127</td>
-        <td>21,802,784</td>
-        <td>95</td>
-      </tr>
-      <tr>
-        <td>DenseNet</td>
-        <td>58,434,127</td>
-        <td>51,396,623</td>
-        <td>7,037,504</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>VGG19</td>
-        <td>45,730,895</td>
-        <td>25,706,511</td>
-        <td>20,024,384</td>
-        <td>74</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+    <!-- 📊 Parameters Table -->
+    <section class="comparison scroll-animate">
+      <h2>Model Parameters & Accuracy</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Total Parameters</th>
+            <th>Trainable Parameters</th>
+            <th>Non-Trainable Parameters</th>
+            <th>Accuracy (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>InceptionV3</td>
+            <td>156,036,911</td>
+            <td>134,234,127</td>
+            <td>21,802,784</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>DenseNet</td>
+            <td>58,434,127</td>
+            <td>51,396,623</td>
+            <td>7,037,504</td>
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>VGG19</td>
+            <td>45,730,895</td>
+            <td>25,706,511</td>
+            <td>20,024,384</td>
+            <td>74</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 📈 Combined Metrics Chart -->
-<section class="charts" data-aos="fade-up">
-  <h2>Performance Metrics</h2>
-  <div class="chart-container">
-    <canvas id="metricsChart"></canvas>
-  </div>
-</section>
-
+    <!-- 📈 Combined Metrics Chart -->
+    <section class="charts scroll-animate">
+      <h2>Performance Metrics</h2>
+      <div class="chart-container">
+        <canvas id="metricsChart"></canvas>
+      </div>
+    </section>
 
     <!-- 🔍 Similarities & Differences -->
-    <section class="similarity" data-aos="fade-up">
+    <section class="similarity scroll-animate">
       <h2>Similarities & Differences</h2>
       <div class="points">
         <h3>Similarities</h3>
@@ -107,7 +109,7 @@
     </section>
 
     <!-- 🐾 Why These Models -->
-    <section class="why" data-aos="fade-up">
+    <section class="why scroll-animate">
       <h2>Why Use These for Animal Detection?</h2>
       <ul>
         <li><strong>Transfer Learning:</strong> Saves time and resources</li>
@@ -115,29 +117,41 @@
         <li><strong>Strong Visual Feature Extraction:</strong> Good at patterns like fur, tails, textures</li>
       </ul>
     </section>
-    <section class="check-performance" data-aos="fade-up" data-aos-duration="1200">
+
+    <!-- 📤 Upload Section -->
+    <section class="check-performance scroll-animate">
       <div class="container">
-          <h2>Check Our Models Performance on Your Own Data</h2>
-          <p>Upload your image to see how our models perform on your data. You can test it with InceptionV3, VGG19, and DenseNet.</p>
-          <a href="{{ url_for('predict_page') }}" class="btn btn-primary">Check Performance</a>
+        <h2>Check Our Models Performance on Your Own Data</h2>
+        <p>Upload your image to see how our models perform on your data. You can test it with InceptionV3, VGG19, and DenseNet.</p>
+        <a href="{{ url_for('predict_page') }}" class="btn btn-primary">Check Performance</a>
+      </div>
+    </section>
 
-                </div>
-  </section>
-
-  <!-- Include AOS script -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-      // Initialize AOS
-      AOS.init();
-  </script>
   </main>
 
-  <footer>
+  <footer class="scroll-animate">
     <p>&copy; Model's Performance Comparison on Animal Detection Data</p>
   </footer>
 
+  <!-- Optional JS Scripts -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init();</script>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
